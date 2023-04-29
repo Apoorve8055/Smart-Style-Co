@@ -21,6 +21,7 @@
         border: 1px solid #fff;
         color: #fff;
         width: 100%;
+        text-align: center;
         background-color: #080b13;
       }
       .btn {
@@ -30,6 +31,7 @@
         width: 100%;
         background-color: #fff;
         cursor: pointer;
+        text-align: center;
       }
     }
 
@@ -50,8 +52,9 @@
       li {
         font-size: 1rem;
         margin: 0;
-        padding: 0;
+        padding: 0.3rem;
         cursor: pointer;
+        font-weight: 500;
       }
       @include lg {
         border-left: 1px solid #fff;
@@ -65,5 +68,7 @@
 
   .footer-copyright {
     padding: 1rem;
+    text-align: center;
+    font-weight: 500;
   }
 }
