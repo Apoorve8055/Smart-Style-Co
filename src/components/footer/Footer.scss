@@ -1,0 +1,69 @@
+@import "../../utils/mixins/mediaQueries.scss";
+.footer {
+  background-color: #080b13;
+  color: #fff;
+  .footer-important-links {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .footer-subscribe {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: auto;
+      .input {
+        padding: 1rem 3rem;
+        border: 1px solid #fff;
+        color: #fff;
+        width: 100%;
+        background-color: #080b13;
+      }
+      .btn {
+        padding: 1rem 3rem;
+        color: #080b13;
+        font-weight: 500;
+        width: 100%;
+        background-color: #fff;
+        cursor: pointer;
+      }
+    }
+
+    .footer-list {
+      display: flex;
+      justify-content: space-around;
+      gap: 24px;
+      padding: 1rem;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      li {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+      }
+      @include lg {
+        border-left: 1px solid #fff;
+      }
+    }
+    @include lg {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .footer-copyright {
+    padding: 1rem;
+  }
+}
