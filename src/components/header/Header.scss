@@ -1,0 +1,80 @@
+@import "../../utils/mixins/mediaQueries.scss";
+
+.header {
+  padding: 1rem;
+
+  .header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-logo,
+    .menubar-icon,
+    .cart-icon,
+    .x-icon {
+      font-size: 1.8rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .x-icon {
+      width: auto;
+      margin: 20px 20px 20px auto;
+    }
+
+    @include lg {
+      .menubar-icon {
+        display: none;
+      }
+
+      .header-right {
+        display: flex;
+        gap: 24px;
+      }
+    }
+  }
+
+  .categories-nav-list {
+    position: absolute;
+    top: 0;
+    border: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+    gap: 24px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+
+    background-color: #fff;
+
+    .categories-nav-listItem {
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    @include lg {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      width: 100%;
+      justify-content: space-between;
+      transform: translateX(0%);
+      box-shadow: none;
+      gap: 24px;
+
+      .x-icon {
+        display: none;
+      }
+    }
+  }
+
+  .open-menu {
+    transform: translateX(0%);
+    box-shadow: 16px 4px 150px rgb(0, 0, 0, 0.6);
+  }
+}
