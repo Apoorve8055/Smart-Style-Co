@@ -1,0 +1,130 @@
+@import "../../utils/mixins/mediaQueries.scss";
+
+.home {
+  .hero-section {
+    height: 32vh;
+    background: url("../../assets/img/banner.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.4
+      ); /* Change the alpha value to adjust the transparency */
+    }
+
+    .hero-msg {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 4rem;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: bold;
+      word-wrap: break-word;
+      z-index: 10;
+
+      @include lg {
+        font-size: 4rem;
+      }
+    }
+
+    .scroll-down {
+      color: #fff;
+      font-weight: bold;
+      font-size: 3rem;
+      z-index: 10;
+      cursor: pointer;
+      animation: ArrowBounce 1.5s infinite;
+    }
+    @keyframes ArrowBounce {
+      0% {
+        margin-top: 0;
+      }
+      50% {
+        margin-top: 20px;
+      }
+      100% {
+        margin-top: 0;
+      }
+    }
+    @include lg {
+      height: 100vh;
+    }
+  }
+  .featured-category {
+    padding: 1rem;
+    // box-shadow: 16px 3px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0px -16px 16px rgb(0, 0, 0, 0.2);
+    .featured-category-title {
+      font-size: 1.7rem;
+      font-weight: bolder;
+      text-transform: uppercase;
+      padding: 1rem;
+      padding-bottom: 2rem;
+      @include lg {
+        font-size: 1.8rem;
+      }
+    }
+    .category-list {
+      display: grid;
+      justify-content: center;
+      gap: 2rem;
+      padding-left: 1rem;
+      padding-bottom: 2rem;
+      .category-card {
+        width: 300px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+        box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
+        border-radius: 16px;
+        transition: transform 0.2s ease-in-out;
+        cursor: pointer;
+        .category-card-title {
+          font-size: 1.3rem;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        .category-card-img {
+          height: 400px;
+          background-size: cover;
+          background-position: center;
+        }
+
+        @include lg {
+          width: auto;
+          width: 300px;
+          .category-card-title {
+            font-size: 1.8rem;
+          }
+        }
+        &:hover {
+          transform: scale(1.05); // Scale the image by 110% on hover
+        }
+      }
+      @include lg {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
