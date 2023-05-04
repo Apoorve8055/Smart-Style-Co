@@ -1,5 +1,5 @@
 import { HiChevronDoubleDown } from "react-icons/hi2";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 import "./Home.scss";
 import electronics from "../../assets/img/electronics.jpg";
 import jewelry from "../../assets/img/jewelery.jpg";

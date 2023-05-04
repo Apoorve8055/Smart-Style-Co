@@ -1,5 +1,5 @@
 import "./Footer.scss";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 const Footer = () => {
   return (
     <Fade>
