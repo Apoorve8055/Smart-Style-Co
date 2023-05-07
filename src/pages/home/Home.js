@@ -28,7 +28,8 @@ const categories = [
   },
 ];
 
-const Home = () => {
+const Home = (props) => {
+  console.log(props);
   return (
     <div className="home">
       <div className="hero-section">

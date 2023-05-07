@@ -1,13 +1,12 @@
 import { useState } from "react";
 import "./Header.scss";
 import { HiBars4, HiShoppingCart, HiXMark } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const Header = () => {
-  const [categories, setCategories] = useState([
-    "Electronics",
-    "Jewelery",
-    "Men's Clothing",
-    "Women's Clothing",
-  ]);
+  const navigate = useNavigate();
+  const { productCategoryList, shopping } = useSelector((state) => state);
   const [menuToggler, setMenuToggler] = useState(false);
 
   const CategoriesNavList = () => {
@@ -17,13 +16,26 @@ const Header = () => {
           className="x-icon"
           onClick={() => setMenuToggler(!menuToggler)}
         />
-        {categories &&
-          categories.map((item) => (
-            <div className="categories-nav-listItem">{item}</div>
+
+        {productCategoryList &&
+          productCategoryList.map((item) => (
+            <div
+              className="categories-nav-listItem"
+              onClick={() => navigate(`shop/${item}`)}
+            >
+              {item}
+            </div>
           ))}
+        <div
+          className="categories-nav-listItem"
+          onClick={() => navigate(`/shop`)}
+        >
+          All Products
+        </div>
       </nav>
     );
   };
+
   return (
     <header className="header">
       <div className="header-menu">
@@ -34,7 +46,10 @@ const Header = () => {
         <div className="header-logo">Smart Style Co.</div>
         <div className="header-right">
           <CategoriesNavList />
-          <HiShoppingCart className="cart-icon" />
+          <div className="header-cart-wrapper">
+            <HiShoppingCart className="cart-icon" />
+            <div className="count">{shopping.totalNumberofProduct}</div>
+          </div>
         </div>
       </div>
     </header>

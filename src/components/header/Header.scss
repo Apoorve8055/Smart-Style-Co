@@ -22,15 +22,33 @@
       margin: 20px 20px 20px auto;
     }
 
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      .header-cart-wrapper {
+        display: flex;
+
+        .count {
+          transform: translateX(-60%) translateY(-30%);
+          font-size: 0.7rem;
+          font-weight: bold;
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #2d2d2d;
+        }
+      }
+    }
+
     @include lg {
       .menubar-icon {
         display: none;
-      }
-
-      .header-right {
-        display: flex;
-        align-items: center;
-        gap: 24px;
       }
     }
   }
