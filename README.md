@@ -1,5 +1,3 @@
-Sure, here's an example README.md file for the Smart Style Co project:
-
 # Smart Style Co
 
 Smart Style Co is a React.js website that offers a variety of products, including electronics, jewelry, men's clothing, and women's clothing. It is designed with a user-friendly interface and features a search bar, shopping cart, and checkout system to ensure a smooth and efficient shopping experience.
