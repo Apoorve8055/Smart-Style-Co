@@ -13,3 +13,8 @@ export const getProductList = () => {
   const result = axiosInstance.get("/products");
   return result;
 };
+
+export const getProductById = (id) => {
+  const result = axiosInstance.get("/products/" + id);
+  return result;
+};

@@ -9,6 +9,7 @@
     font-size: 0.8rem;
     font-weight: bold;
     padding: 0rem 1rem 1rem 0rem;
+    text-transform: uppercase;
     .bold {
       font-size: 0.8rem;
       color: #2d2d2d;
@@ -16,6 +17,121 @@
     }
     div {
       cursor: pointer;
+    }
+  }
+
+  .product-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1rem;
+
+    .product-image-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #edebe9;
+      width: 100%;
+
+      .product-image {
+        padding: 2rem;
+        height: 300px;
+        mix-blend-mode: multiply;
+      }
+      @include lg {
+        width: 50vw;
+      }
+    }
+
+    .product-details-section-wrapper {
+      .product-details-section {
+        .product-details-title {
+          font-size: 2rem;
+          font-weight: 900;
+        }
+        .product-details-category-price {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          padding: 1rem 1rem 1rem 0rem;
+          font-size: 1.5rem;
+          font-weight: 600;
+          text-transform: capitalize;
+          @include lg {
+            flex-direction: row;
+          }
+        }
+        .product-details-heading {
+          padding: 1rem 1rem 1rem 0rem;
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+        .product-details {
+          padding: 0rem 1rem 1rem 0rem;
+          font-size: 1.3rem;
+
+          // font-weight: 600;
+        }
+
+        .product-card-action {
+          display: flex;
+          align-items: center;
+          padding-bottom: 0.4rem;
+          gap: 8px;
+
+          .product-qty {
+            border: 1px solid #2d2d2d;
+            width: 200px;
+            @include lg {
+              max-width: 120px;
+            }
+          }
+
+          .product-card-like {
+            color: #2d2d2d;
+            font-size: 1.6rem;
+            border: 1px solid #2d2d2d;
+            padding: 0.4rem 0.3rem;
+            cursor: pointer;
+
+            @include lg {
+              padding: 0.3rem;
+              max-width: 200px;
+            }
+          }
+
+          .product-card-addtocartbtn {
+            background-color: #2d2d2d;
+            color: #edebe9;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.28px;
+            width: 100%;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid #2d2d2d;
+            padding: 0.7rem 0.6rem;
+            @include lg {
+              padding: 0.6rem 0.6rem;
+              max-width: 200px;
+            }
+          }
+
+          .liked {
+            color: #ff2121;
+          }
+        }
+
+        @include lg {
+          width: 50vw;
+        }
+        @include lg {
+          padding: 0rem 2rem;
+        }
+      }
+    }
+    @include lg {
+      flex-direction: row;
     }
   }
 }
