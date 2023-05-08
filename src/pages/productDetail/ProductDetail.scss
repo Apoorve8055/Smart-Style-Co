@@ -1,0 +1,21 @@
+@import "../../utils/mixins/mediaQueries.scss";
+.product-details-page {
+  padding: 1rem;
+  .shop-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #2d2d2dc2;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0rem 1rem 1rem 0rem;
+    .bold {
+      font-size: 0.8rem;
+      color: #2d2d2d;
+      font-weight: 700;
+    }
+    div {
+      cursor: pointer;
+    }
+  }
+}

@@ -74,7 +74,7 @@
     // box-shadow: 16px 3px 10px rgba(0, 0, 0, 1);
     box-shadow: 0px -16px 16px rgb(0, 0, 0, 0.2);
     .featured-category-title {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       font-weight: bolder;
       text-transform: uppercase;
       padding: 1rem;
@@ -89,27 +89,48 @@
       gap: 2rem;
       padding-left: 1rem;
       padding-bottom: 2rem;
+
       .category-card {
-        width: 300px;
-        margin: 0 auto;
-        display: grid;
-        gap: 1rem;
-        padding: 1rem;
-        box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
-        border-radius: 16px;
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 0px 16px rgb(0, 0, 0, 0.2);
         transition: transform 0.2s ease-in-out;
         cursor: pointer;
-        color: #141613eb;
-        .category-card-title {
-          font-size: 1.3rem;
-          font-weight: bold;
-          text-transform: uppercase;
+        color: #2d2d2d;
+        .category-card-img-wrapper {
+          padding: 1.8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #edebe9;
+
+          .category-card-img {
+            width: 280px;
+            height: 320px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            mix-blend-mode: multiply;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+            &:hover {
+              transform: scale(1.05); // Scale the image by 110% on hover
+            }
+          }
         }
 
-        .category-card-img {
-          height: 400px;
-          background-size: cover;
-          background-position: center;
+        .category-card-details-wrapper {
+          display: flex;
+          flex-direction: column;
+          padding: 1rem;
+          gap: 1rem;
+          .category-card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 0.28px;
+            text-transform: uppercase;
+          }
         }
 
         @include lg {

@@ -43,7 +43,9 @@ const Header = () => {
           className="menubar-icon"
           onClick={() => setMenuToggler(!menuToggler)}
         />
-        <div className="header-logo">Smart Style Co.</div>
+        <div className="header-logo" onClick={() => navigate("/")}>
+          Smart Style Co.
+        </div>
         <div className="header-right">
           <CategoriesNavList />
           <div className="header-cart-wrapper">
