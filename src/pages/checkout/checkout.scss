@@ -19,6 +19,12 @@
     .checkout-cart-list {
       display: grid;
       gap: 8px;
+      .empty {
+        font-size: 1.2rem;
+        font-weight: 300;
+
+        padding: 1rem 0rem;
+      }
       .checkout-cart-list-item {
         width: 320px;
         display: flex;

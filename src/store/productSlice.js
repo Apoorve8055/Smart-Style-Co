@@ -43,7 +43,20 @@ const productSlice = createSlice({
       }
     },
 
-    decrementProductFromCart: (state, action) => {},
+    decrementProductFromCart: (state, action) => {
+      const { id, price } = action?.payload;
+      const index = state.shopping.cart.findIndex((item) => item.id === id);
+      if (state.shopping.cart[index].quantity === 1) {
+        state.shopping.cart = state.shopping.cart.filter(
+          (item) => item.id !== id
+        );
+      } else {
+        state.shopping.cart[index].quantity--;
+      }
+
+      state.shopping.totalNumberofProduct--;
+      state.shopping.totalPrice -= price;
+    },
     deleteFromCart: (state, action) => {
       const { id, price } = action?.payload;
       const index = state.shopping.cart.findIndex((item) => item.id === id);

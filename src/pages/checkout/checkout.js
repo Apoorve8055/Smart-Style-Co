@@ -1,7 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./checkout.scss";
 import { IoAdd, IoRemove } from "react-icons/io5";
-import { addToCart, deleteFromCart } from "../../store/productSlice";
+import {
+  addToCart,
+  decrementProductFromCart,
+  deleteFromCart,
+} from "../../store/productSlice";
 
 const Checkout = () => {
   const { cart, totalPrice } = useSelector((state) => state.shopping);
@@ -25,6 +29,11 @@ const Checkout = () => {
         <div className="checkout-cart-heading">Shopping Cart</div>
         <hr className="hr" />
         <div className="checkout-cart-list">
+          {cart.length === 0 && (
+            <div className="empty">
+              Shopping cart is empty, please add some products
+            </div>
+          )}
           {cart?.map(({ id, title, img, price, quantity }) => (
             <div className="checkout-cart-list-item">
               <div className="checkout-item-img-wrapper">
@@ -36,7 +45,14 @@ const Checkout = () => {
 
                 <div className="checkout-item-action">
                   <div className="cart-qty-changer">
-                    <IoRemove className="box" />
+                    <IoRemove
+                      className="box"
+                      onClick={() =>
+                        dispatch(
+                          decrementProductFromCart({ id: id, price: price })
+                        )
+                      }
+                    />
                     <div>{quantity}</div>
                     <IoAdd
                       className="box"
