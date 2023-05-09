@@ -48,7 +48,10 @@ const Header = () => {
         </div>
         <div className="header-right">
           <CategoriesNavList />
-          <div className="header-cart-wrapper">
+          <div
+            className="header-cart-wrapper"
+            onClick={() => navigate("/checkout")}
+          >
             <HiShoppingCart className="cart-icon" />
             <div className="count">{shopping.totalNumberofProduct}</div>
           </div>

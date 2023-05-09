@@ -22,25 +22,39 @@ const productSlice = createSlice({
       state.productCategoryList = action.payload;
     },
     addToCart: (state, action) => {
-      const { id, img, price, qty } = action?.payload;
-      const obj = state.shopping.cart.find((obj) => obj.id === id);
-      if (obj) {
-        obj.quantity++;
-        state.shopping.totalNumberofProduct++;
-        state.shopping.totalPrice += price;
-      }
-      if (qty) {
-        let additional_qty = parseInt(qty);
-        state.shopping.cart.push({ id, img, price, quantity: additional_qty });
-        state.shopping.totalNumberofProduct += additional_qty;
-        state.shopping.totalPrice += price * additional_qty;
+      const { id, title, img, price, qty } = action?.payload;
+      const objIndex = state.shopping.cart.findIndex((obj) => obj.id === id);
+
+      if (objIndex !== -1) {
+        state.shopping.cart[objIndex].quantity += qty ? parseInt(qty) : 1;
+        state.shopping.totalNumberofProduct += qty ? parseInt(qty) : 1;
+        state.shopping.totalPrice += price * (qty ? parseInt(qty) : 1);
       } else {
-        state.shopping.cart.push({ id, img, price, quantity: 1 });
-        state.shopping.totalNumberofProduct++;
-        state.shopping.totalPrice += price;
+        const newItem = {
+          id,
+          title,
+          img,
+          price,
+          quantity: qty ? parseInt(qty) : 1,
+        };
+        state.shopping.cart.push(newItem);
+        state.shopping.totalNumberofProduct += qty ? parseInt(qty) : 1;
+        state.shopping.totalPrice += price * (qty ? parseInt(qty) : 1);
       }
     },
-    removeToCart: (state, action) => {},
+
+    decrementProductFromCart: (state, action) => {},
+    deleteFromCart: (state, action) => {
+      const { id, price } = action?.payload;
+      const index = state.shopping.cart.findIndex((item) => item.id === id);
+      const qty = state.shopping.cart[index].quantity;
+      state.shopping.cart = state.shopping.cart.filter(
+        (item) => item.id !== id
+      );
+
+      state.shopping.totalNumberofProduct -= qty;
+      state.shopping.totalPrice -= price * qty;
+    },
     favoriteProduct: (state, action) => {
       const { id, img, price } = action?.payload;
       const obj = state.shopping.favoriteProductList.find(
@@ -65,7 +79,8 @@ export const {
   setProductList,
   setProductCategoryList,
   addToCart,
-  removeToCart,
+  decrementProductFromCart,
+  deleteFromCart,
   favoriteProduct,
 } = productSlice.actions;
 

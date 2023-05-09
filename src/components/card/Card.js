@@ -16,6 +16,7 @@ const Card = ({ item }) => {
     dispatch(
       addToCart({
         id: item?.id,
+        title: item?.title,
         img: item?.image,
         price: item?.price,
       })

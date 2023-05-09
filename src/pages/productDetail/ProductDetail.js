@@ -33,6 +33,7 @@ const ProductDetail = () => {
     dispatch(
       addToCart({
         id: productDetails?.id,
+        title: productDetails?.title,
         img: productDetails?.image,
         price: productDetails?.price,
         qty: selectQty,
