@@ -3,8 +3,8 @@
 Smart Style Co is a React.js website that offers a variety of products, including electronics, jewelry, men's clothing, and women's clothing. It is designed with a user-friendly interface and features a search bar, shopping cart, and checkout system to ensure a smooth and efficient shopping experience.
 
 <div style="display:flex; flex-direction: row; align-items: center; gap:16px;">
-  <img style="width:210px" src="https://github.com/Apoorve8055/Smart-Style-Co/blob/main/Screenshots/mobile.png?raw=true" />
-  <img style="width:700px" src="https://github.com/Apoorve8055/Smart-Style-Co/blob/main/Screenshots/desktop.png?raw=true" />
+  <img style="width:180px" src="https://github.com/Apoorve8055/Smart-Style-Co/blob/main/Screenshots/mobile.png?raw=true" />
+  <img style="width:600px" src="https://github.com/Apoorve8055/Smart-Style-Co/blob/main/Screenshots/desktop.png?raw=true" />
 </div>
 
 ## Getting Started
