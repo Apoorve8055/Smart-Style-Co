@@ -83,7 +83,7 @@ const Checkout = () => {
         <hr className="hr" />
         <div className="checkout-order-total">
           <div>Subtotal</div>
-          <div>$ {totalPrice ? totalPrice.toFixed(2) : 0}</div>
+          <div>$ {totalPrice >= 0 ? totalPrice.toFixed(2) : 0}</div>
         </div>
         <div className="checkout-order-total">
           <div>Estimated Shipping</div>
@@ -92,7 +92,7 @@ const Checkout = () => {
         <hr className="hr" />
         <div className="checkout-order-total">
           <div>Estimated Total</div>
-          <div>$ {totalPrice ? (totalPrice + 15).toFixed(2) : 0}</div>
+          <div>$ {totalPrice >= 0 ? (totalPrice + 15).toFixed(2) : 0}</div>
         </div>
         <div className="checkout-btn">Proceed To Checkout</div>
       </div>
