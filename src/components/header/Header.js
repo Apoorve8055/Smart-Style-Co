@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import "./Header.scss";
 import { HiBars4, HiShoppingCart, HiXMark } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
@@ -60,4 +60,4 @@ const Header = () => {
     </header>
   );
 };
-export default Header;
+export default memo(Header);

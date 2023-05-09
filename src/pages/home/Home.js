@@ -6,6 +6,7 @@ import jewelry from "../../assets/img/jewelery.jpg";
 import men from "../../assets/img/men.jpg";
 import women from "../../assets/img/women.jpg";
 import { useNavigate } from "react-router-dom";
+import { memo } from "react";
 const categories = [
   {
     name: "electronics",
@@ -29,7 +30,7 @@ const categories = [
   },
 ];
 
-const Home = (props) => {
+const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="home">
@@ -58,7 +59,11 @@ const Home = (props) => {
           <div className="featured-category-title">Our Collection</div>
           <div className="category-list">
             {categories.map((item, index) => (
-              <div className="category-card" key={index}>
+              <div
+                className="category-card"
+                key={index}
+                onClick={() => navigate(`/Shop/${item.name}`)}
+              >
                 <div className="category-card-img-wrapper">
                   <div
                     className="category-card-img"
@@ -81,4 +86,4 @@ const Home = (props) => {
     </div>
   );
 };
-export default Home;
+export default memo(Home);

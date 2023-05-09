@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./Footer.scss";
 import { Fade } from "react-awesome-reveal";
 const Footer = () => {
@@ -51,4 +52,4 @@ const Footer = () => {
     </Fade>
   );
 };
-export default Footer;
+export default memo(Footer);

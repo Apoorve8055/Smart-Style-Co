@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { IoSearch } from "react-icons/io5";
 import { FaFilter } from "react-icons/fa";
 import Select from "react-select";
 import Rating from "react-rating";
@@ -41,15 +40,6 @@ const ProductList = () => {
     <svg className={props.className} pointerEvents="none">
       <use xlinkHref={props.href} />
     </svg>
-  );
-  const filterProductsByCategory = useCallback(
-    (selectedCategory) => {
-      const newFilteredProducts = productList.filter(
-        (item) => item.category === selectedCategory
-      );
-      setFilteredProducts(newFilteredProducts);
-    },
-    [productList]
   );
 
   const handlePriceRangeFilter = useCallback(
@@ -230,4 +220,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default memo(ProductList);

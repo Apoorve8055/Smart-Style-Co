@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { fetchProductById } from "../../store/productSliceThunks";
 import "./ProductDetail.scss";
 import { IoHeart } from "react-icons/io5";
@@ -122,4 +122,4 @@ const ProductDetail = () => {
     </div>
   );
 };
-export default ProductDetail;
+export default memo(ProductDetail);

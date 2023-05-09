@@ -2,7 +2,7 @@ import { IoHeart } from "react-icons/io5";
 import "./Card.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, favoriteProduct } from "../../store/productSlice";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Card = ({ item }) => {
   const navigate = useNavigate();
@@ -64,4 +64,4 @@ const Card = ({ item }) => {
   );
 };
 
-export default Card;
+export default memo(Card);

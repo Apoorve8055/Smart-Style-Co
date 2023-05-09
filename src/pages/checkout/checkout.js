@@ -6,10 +6,10 @@ import {
   decrementProductFromCart,
   deleteFromCart,
 } from "../../store/productSlice";
+import { memo } from "react";
 
 const Checkout = () => {
   const { cart, totalPrice } = useSelector((state) => state.shopping);
-  const shopping = useSelector((state) => state.shopping);
   const dispatch = useDispatch();
   const incrementProductCount = (id, title, image, price) => {
     dispatch(
@@ -21,8 +21,6 @@ const Checkout = () => {
       })
     );
   };
-
-  console.log(shopping);
   return (
     <div className="checkout">
       <div className="checkout-cart">
@@ -100,4 +98,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default memo(Checkout);

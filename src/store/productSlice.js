@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchProductById } from "./productSliceThunks";
+import {
+  fetchProductById,
+  fetchProductCategory,
+  fetchProductList,
+} from "./productSliceThunks";
 
 const productSlice = createSlice({
   name: "product",
@@ -84,6 +88,14 @@ const productSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchProductById.fulfilled, (state, action) => {
       state.productDetails = action.payload;
+    });
+
+    builder.addCase(fetchProductCategory.fulfilled, (state, action) => {
+      state.productCategoryList = action.payload;
+    });
+
+    builder.addCase(fetchProductList.fulfilled, (state, action) => {
+      state.productList = action.payload;
     });
   },
 });
