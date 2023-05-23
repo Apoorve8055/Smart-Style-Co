@@ -12,7 +12,7 @@ Smart Style Co is a React.js website that offers a variety of products, includin
 To get started with the project, you will need to clone the repository and install the dependencies. This project uses npm to manage dependencies.
 
 ```
-git clone https://github.com/your-username/smart-style-co.git
+git clone https://github.com/Apoorve8055/smart-style-co.git
 cd smart-style-co
 npm install
 ```
