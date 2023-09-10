@@ -51,3 +51,7 @@ Contributions to the project are welcome! If you would like to contribute, pleas
 ## License
 
 The project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as you see fit.
+
+---
+
+**Disclaimer:** This project is a fictional representation and not associated with any real-world company or service. The information provided here is for demonstration purposes only and does not constitute t o any ecommerce site.
